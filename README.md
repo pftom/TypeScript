@@ -36,27 +36,51 @@ JS has two kinds things:
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### 3
 
+You should use strict mode. In fact, TS compiler will insert it for you if you use modules and more ...
+
+So, at global level, check a variable is defined:
+
+```javascript
+if (typeof someGlobal !== 'undefined') {
+    console.log(someGlobal);
+}
+```
 
 
 
+### 4
 
+`this` is commonly referred to as the "calling context"
+
+
+
+### 5
+
+JavaScript only has one number type. It is a double-precision 64-bit `Number`.
+
+Judge safety number, use `Number.isSafeInteger`
+
+
+
+Big number calculate and decimal calculate: use `big.js`
+
+```javascript
+npm install big.js @types/big.js
+```
+
+
+
+### 6
+
+`NaN` use `Number.isNaN`.
+
+### 7
+
+Classes:
+
+ - Inheritance
+ - Statics
+ - Access Modifiers: `public`, `private`, `protected`
 
