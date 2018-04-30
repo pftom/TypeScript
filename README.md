@@ -76,6 +76,8 @@ npm install big.js @types/big.js
 
 `NaN` use `Number.isNaN`.
 
+
+
 ### 7
 
 Classes:
@@ -83,4 +85,8 @@ Classes:
  - Inheritance
  - Statics
  - Access Modifiers: `public`, `private`, `protected`
+ - ​
+
+
+### 8
 

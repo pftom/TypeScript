@@ -37,6 +37,4 @@ class FooBase {
 }
 
 var foo = new FooBase();
-foo.x
-foo.y
-foo.z
+
