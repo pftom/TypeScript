@@ -1,6 +1,6 @@
 "use strict";
-exports.__esModule = true;
-var fs = require("fs");
+Object.defineProperty(exports, "__esModule", { value: true });
+const fs = require("fs");
 // function loadJSON(filename: string, cb: (error: Error, data: ant): void) {
 //   fs.readFile(filename, function (err, data) {
 //     if (err) {
@@ -44,8 +44,8 @@ var fs = require("fs");
 //   }
 // })
 function readFileAsync(filename) {
-    return new Promise(function (resolve, reject) {
-        fs.readFile(filename, function (err, result) {
+    return new Promise((resolve, reject) => {
+        fs.readFile(filename, (err, result) => {
             if (err) {
                 reject(err);
             }
@@ -57,7 +57,7 @@ function readFileAsync(filename) {
 }
 function loadJSON(filename) {
     return readFileAsync(filename)
-        .then(function (data) { return JSON.parse(data); });
+        .then(data => { return JSON.parse(data); });
 }
 // loadJSON('good.json')
 //   .then(data => {
@@ -81,4 +81,5 @@ function loadJSON(filename) {
 //     console.log(res);
 //   });
 loadJSON('good.json')
-    .then(function (data) { return console.log(data); })["catch"](function (err) { return console.log(err); });
+    .then(data => console.log(data))
+    .catch(err => console.log(err));

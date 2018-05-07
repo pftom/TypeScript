@@ -1,15 +1,17 @@
-var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
-    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
-    return cooked;
-};
+// tag function 
 var say = "a bird in hand > two in the bush";
-var html = htmlEscape(__makeTemplateObject(["<div>I would just like to say: ", "</div>"], ["<div>I would just like to say: ", "</div>"]), say);
-function htmlEscape(literals) {
-    var placeholders = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        placeholders[_i - 1] = arguments[_i];
+var html = htmlEscape `<div>I would just like to say: ${say}</div>`;
+function htmlEscape(literals, ...placeholders) {
+    let result = "";
+    for (let i = 0; i < placeholders.length; i++) {
+        result += literals[i];
+        result += placeholders[i]
+            .replace(/&/g, '&amp;')
+            .replace(/"/, '&quot;')
+            .replace(/'/g, '&#39;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;');
     }
-    var res = "";
-    console.log(literals);
-    console.log(placeholders);
+    result += literals[literals.length - 1];
+    return result;
 }

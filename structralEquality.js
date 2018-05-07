@@ -1,4 +1,4 @@
 "use strict";
-exports.__esModule = true;
-var deepEqual = require("deep-equal");
+Object.defineProperty(exports, "__esModule", { value: true });
+const deepEqual = require("deep-equal");
 console.log(deepEqual({ a: 123 }, { a: 123 }));
